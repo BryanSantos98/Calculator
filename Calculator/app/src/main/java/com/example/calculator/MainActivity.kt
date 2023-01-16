@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         val btEqual = findViewById<AppCompatButton>(R.id.btEqual)
         val btComma = findViewById<AppCompatButton>(R.id.btComma)
         val btDot = findViewById<AppCompatButton>(R.id.btPoint)
+        val operators = "+"; "-"; "/"; "*";
 
 
         // Adiciona textView no código
@@ -55,6 +56,7 @@ class MainActivity : AppCompatActivity() {
         bt8.setOnClickListener { tvCalculator.text = tvCalculator.text.toString().plus("8") }
         bt9.setOnClickListener { tvCalculator.text = tvCalculator.text.toString().plus("9") }
         btAC.setOnClickListener { tvCalculator.text = "" }
+
         btX.setOnClickListener {
             val tvString = tvCalculator.text.toString()
             if (tvString.isNotEmpty()) {
@@ -67,6 +69,12 @@ class MainActivity : AppCompatActivity() {
             if (tvString.isNotEmpty()) {
                 tvCalculator.text = tvString.plus(".")
             }
+            if (tvString.isEmpty()) {
+                tvCalculator.text = tvString.plus("")
+            }
+            if (tvString.contains(".")) {
+                tvCalculator.text = tvString.plus("")
+            }
 
         }
         btComma.setOnClickListener {
@@ -75,9 +83,105 @@ class MainActivity : AppCompatActivity() {
             if (tvString.isNotEmpty()) {
                 tvCalculator.text = tvString.plus(",")
             }
+            if (tvString.isEmpty()) {
+                tvCalculator.text = tvString.plus("")
+            }
+            if (tvString.contains(",")) {
+                tvCalculator.text = tvString.plus("")
+            }
+
+
+        }
+
+        btPlus.setOnClickListener {
+            val tvString = tvCalculator.text.toString()
+            val tvString2 = tvCalculator.text.toString()
+            val operators = "+"; "-"; "/"; "*";
+
+
+            if (tvString.isNotEmpty()) {
+                tvString + tvString2
+            }
+
+            if (tvString.isNotEmpty()) {
+                tvCalculator.text = tvString.plus("+")
+            }
+            if (tvString.isEmpty()) {
+                tvCalculator.text = tvString.plus("")
+            }
+            if (tvString.contains(operators)) {
+                tvCalculator.text = tvString.plus("")
+            }
+
         }
 
 
+        btMinus.setOnClickListener {
+            val tvString = tvCalculator.text.toString()
+            val tvString2 = tvCalculator.text.toString()
+            val operators = "+"; "-"; "/"; "*";
+
+            if (tvString.isNotEmpty()) {
+                tvCalculator.text = tvString.plus("-")
+            }
+            if (tvString.isEmpty()) {
+                tvCalculator.text = tvString.plus("")
+            }
+            if (tvString.contains(operators)) {
+                tvCalculator.text = tvString.plus("")
+            }
+
+            btDivision.setOnClickListener {
+                val tvString = tvCalculator.text.toString()
+                val tvString2 = tvCalculator.text.toString()
+                val operators = "+"; "-"; "/"; "*";
+
+                if (tvString.isNotEmpty()) {
+                    tvCalculator.text = tvString.plus("/")
+                }
+                if (tvString.isEmpty()) {
+                    tvCalculator.text = tvString.plus("")
+                }
+                if (tvString.contains(operators)) {
+                    tvCalculator.text = tvString.plus("")
+                }
+            }
+
+            btModule.setOnClickListener {
+                val tvString = tvCalculator.text.toString()
+                val tvString2 = tvCalculator.text.toString()
+                val operators = "+"; "-"; "/"; "*";
+
+                if (tvString.isNotEmpty()) {
+                    tvCalculator.text = tvString.plus("%")
+                }
+                if (tvString.isEmpty()) {
+                    tvCalculator.text = tvString.plus("")
+                }
+                if (tvString.contains(operators)) {
+                    tvCalculator.text = tvString.plus("")
+                }
+            }
+
+            btMultiply.setOnClickListener {
+                val tvString = tvCalculator.text.toString()
+                val tvString2 = tvCalculator.text.toString()
+                val operators = "+"; "-"; "/"; "*";
+
+                if (tvString.isNotEmpty()) {
+                    tvCalculator.text = tvString.plus("*")
+                }
+                if (tvString.isEmpty()) {
+                    tvCalculator.text = tvString.plus("")
+                }
+                if (tvString.contains(operators)) {
+                    tvCalculator.text = tvString.plus("")
+                }
+
+            }
+
+
+        }
     }
 }
 
