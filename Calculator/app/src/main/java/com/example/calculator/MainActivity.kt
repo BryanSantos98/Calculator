@@ -2,10 +2,13 @@ package com.example.calculator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatTextView
 import java.util.Scanner
+import net.objecthunter.exp4j.Expression;
+import net.objecthunter.exp4j.ExpressionBuilder;
 
 class MainActivity : AppCompatActivity() {
 
@@ -44,29 +47,17 @@ class MainActivity : AppCompatActivity() {
         val btEqual = findViewById<AppCompatButton>(R.id.btEqual)
         val btComma = findViewById<AppCompatButton>(R.id.btComma)
         val btDot = findViewById<AppCompatButton>(R.id.btPoint)
-        // ints
 
-        var number0: Int = 0
-        var number1: Int = 1
-        var number2: Int = 2
-        var number3: Int = 3
-        var number4: Int = 4
-        var number5: Int = 5
-        var number6: Int = 6
-        var number7: Int = 7
-        var number8: Int = 8
-        var number9: Int = 9
-
-        bt0.setOnClickListener { addNewChar("0".plus(number0)) }
-        bt1.setOnClickListener { addNewChar("1".plus(number1)) }
-        bt2.setOnClickListener { addNewChar("2".plus(number2)) }
-        bt3.setOnClickListener { addNewChar("3".plus(number3)) }
-        bt4.setOnClickListener { addNewChar("4".plus(number4)) }
-        bt5.setOnClickListener { addNewChar("5".plus(number5)) }
-        bt6.setOnClickListener { addNewChar("6".plus(number6)) }
-        bt7.setOnClickListener { addNewChar("7".plus(number7)) }
-        bt8.setOnClickListener { addNewChar("8".plus(number8)) }
-        bt9.setOnClickListener { addNewChar("9".plus(number9)) }
+        bt0.setOnClickListener { addNewChar("0") }
+        bt1.setOnClickListener { addNewChar("1") }
+        bt2.setOnClickListener { addNewChar("2") }
+        bt3.setOnClickListener { addNewChar("3") }
+        bt4.setOnClickListener { addNewChar("4") }
+        bt5.setOnClickListener { addNewChar("5") }
+        bt6.setOnClickListener { addNewChar("6") }
+        bt7.setOnClickListener { addNewChar("7") }
+        bt8.setOnClickListener { addNewChar("8") }
+        bt9.setOnClickListener { addNewChar("9") }
         btAC.setOnClickListener { clearScreen() }
         btX.setOnClickListener { backspace() }
         btDot.setOnClickListener { insertFloatOperators(".") }
@@ -76,9 +67,20 @@ class MainActivity : AppCompatActivity() {
         btDivision.setOnClickListener { insertFloatOperators(char = "/".plus(divide())) }
         btMultiply.setOnClickListener { insertFloatOperators("*".plus(multiply())) }
         btModule.setOnClickListener { insertFloatOperators(char = "%".plus(module())) }
+        btEqual.setOnClickListener() {
+            try {
+                val expression = ExpressionBuilder(tvCalculator.text.toString()).build()
+                val result = expression.evaluate()
+                val longResult = result.toULong()
+                if (result == longResult.toDouble())
+                    tvCalculator.text = longResult.toString()
+                else
+                    tvCalculator.text = result.toString()
 
-
-
+            } catch (e: Exception) {
+                Log.d("Exception", "Message : " + e.message)
+            }
+        }
     }
 
     private fun addNewChar(char: String) {
@@ -107,16 +109,18 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    val reader = Scanner(System.`in`)
-    var number1 = reader.nextInt()
-    var number2 = reader.nextInt()
+    var number1: Int = 0
+    var number2: Int = 0
 
-    public fun plus(): Int { return (number1 + number2) }
-    public fun minus(): Int { return (number1 - number2) }
-    public fun multiply(): Int { return (number1 * number2) }
-    public fun divide(): Int { return (number1 / number2) }
-    public fun module(): Int { return (number1 % number2) }
+    public fun plus(): Int {return (number1 + number2)}
 
+    public fun minus(): Int {return (number1 - number2)}
+
+    public fun multiply(): Int {return (number1 * number2)}
+
+    public fun divide(): Int {return (number1 / number2)}
+
+    public fun module(): Int {return (number1 % number2)}
 }
 
 
