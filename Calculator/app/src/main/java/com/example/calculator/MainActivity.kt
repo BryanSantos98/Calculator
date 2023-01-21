@@ -62,20 +62,20 @@ class MainActivity : AppCompatActivity() {
         btX.setOnClickListener { backspace() }
         btDot.setOnClickListener { insertFloatOperators(".") }
         btComma.setOnClickListener { insertFloatOperators(",") }
-        btPlus.setOnClickListener { insertFloatOperators(char = "+".plus(plus())) }
-        btMinus.setOnClickListener { insertFloatOperators(char = "-".plus(minus())) }
-        btDivision.setOnClickListener { insertFloatOperators(char = "/".plus(divide())) }
-        btMultiply.setOnClickListener { insertFloatOperators("*".plus(multiply())) }
-        btModule.setOnClickListener { insertFloatOperators(char = "%".plus(module())) }
+        btPlus.setOnClickListener { insertFloatOperators(char = "+") }
+        btMinus.setOnClickListener { insertFloatOperators(char = "-") }
+        btDivision.setOnClickListener { insertFloatOperators(char = "/") }
+        btMultiply.setOnClickListener { insertFloatOperators("*") }
+        btModule.setOnClickListener { insertFloatOperators(char = "%") }
         btEqual.setOnClickListener() {
             try {
-                val expression = ExpressionBuilder(tvCalculator.text.toString()).build()
+                val expression = ExpressionBuilder(tvCalculator?.text.toString()).build()
                 val result = expression.evaluate()
                 val longResult = result.toULong()
                 if (result == longResult.toDouble())
-                    tvCalculator.text = longResult.toString()
+                    tvCalculator?.text = longResult.toString()
                 else
-                    tvCalculator.text = result.toString()
+                    tvCalculator?.text = result.toString()
 
             } catch (e: Exception) {
                 Log.d("Exception", "Message : " + e.message)
@@ -109,18 +109,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    var number1: Int = 0
-    var number2: Int = 0
 
-    public fun plus(): Int {return (number1 + number2)}
-
-    public fun minus(): Int {return (number1 - number2)}
-
-    public fun multiply(): Int {return (number1 * number2)}
-
-    public fun divide(): Int {return (number1 / number2)}
-
-    public fun module(): Int {return (number1 % number2)}
 }
 
 
