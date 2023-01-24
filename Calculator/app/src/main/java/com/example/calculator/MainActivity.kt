@@ -6,9 +6,9 @@ import android.util.Log
 import android.widget.TextView
 import androidx.appcompat.widget.AppCompatButton
 import androidx.appcompat.widget.AppCompatTextView
-import java.util.Scanner
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -76,7 +76,6 @@ class MainActivity : AppCompatActivity() {
                     tvCalculator?.text = longResult.toString()
                 else
                     tvCalculator?.text = result.toString()
-
             } catch (e: Exception) {
                 Log.d("Exception", "Message : " + e.message)
             }
@@ -102,16 +101,16 @@ class MainActivity : AppCompatActivity() {
 
         if (actualText.isNotEmpty()) {
             """\d""".toRegex().find(actualText.last().toString()).let { matchResult ->
-                if (matchResult?.value != null) {
-                    tvCalculator?.text = actualText.plus(char)
-                }
+                if (matchResult?.value != null) {tvCalculator?.text = actualText.plus(char)}
             }
         }
     }
-
-
 }
 
+
+//botoes
+//fundo
+//fazer o resultado desaparecer quando pressionar outro botão
 
 
 

@@ -17,7 +17,9 @@
         android:textAlignment="textEnd"
         android:textSize="42sp"
         android:textStyle="bold"
-        tools:text="0" />
+        tools:text="0"
+        android:maxLength="10"/>
+
 
     <View
         android:layout_width="match_parent"
