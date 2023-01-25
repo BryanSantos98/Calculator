@@ -2,8 +2,10 @@
 <androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/back"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/light_blue"
     android:gravity="bottom"
     android:orientation="vertical"
     tools:context=".MainActivity">
@@ -12,20 +14,20 @@
         android:id="@+id/tvNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:maxLength="10"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
         android:textAlignment="textEnd"
         android:textSize="42sp"
         android:textStyle="bold"
-        tools:text="0"
-        android:maxLength="10"/>
+        tools:text="0" />
 
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginHorizontal="10dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="1dp"
         android:background="@color/black" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -42,24 +44,29 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:backgroundTint="@android:color/transparent"
-            android:text="AC" />
+            android:background="@drawable/bt_background2"
+            android:text="AC"
+            android:textColor="#FF0101"
+            android:textSize="25sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btErase"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:backgroundTint="@android:color/transparent"
-            android:text="X" />
+            android:background="@drawable/bt_background"
+            android:text="X"
+            android:textSize="25sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btModule"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:backgroundTint="@android:color/transparent"
-            android:text="%" />
+            android:background="@drawable/bt_background"
+            android:text="%"
+            android:textColor="#176246"
+            android:textSize="25sp" />
 
 
         <androidx.appcompat.widget.AppCompatButton
@@ -67,8 +74,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:backgroundTint="@android:color/transparent"
-            android:text="/" />
+            android:background="@drawable/bt_background"
+            android:text="/"
+            android:textColor="#176246"
+            android:textSize="25sp" />
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -87,32 +96,37 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:backgroundTint="@android:color/transparent"
-            android:text="7" />
+            android:background="@drawable/bt_background"
+            android:text="7"
+            android:textSize="25sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btNumber8"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:backgroundTint="@android:color/transparent"
-            android:text="8" />
+            android:background="@drawable/bt_background"
+            android:text="8"
+            android:textSize="25sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btNumber9"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:backgroundTint="@android:color/transparent"
-            android:text="9" />
+            android:background="@drawable/bt_background"
+            android:text="9"
+            android:textSize="25sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btMultiply"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:backgroundTint="@android:color/transparent"
-            android:text="*" />
+            android:background="@drawable/bt_background"
+            android:text="*"
+            android:textColor="#176246"
+            android:textSize="25sp" />
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -123,6 +137,7 @@
         android:layout_marginHorizontal="10dp"
         android:gravity="center"
         android:orientation="horizontal"
+        android:textSize="25sp"
         android:weightSum="1">
 
 
@@ -131,16 +146,18 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:backgroundTint="@android:color/transparent"
-            android:text="4" />
+            android:background="@drawable/bt_background"
+            android:text="4"
+            android:textSize="25sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btNumber5"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:backgroundTint="@android:color/transparent"
-            android:text="5" />
+            android:background="@drawable/bt_background"
+            android:text="5"
+            android:textSize="25sp" />
         />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -148,16 +165,19 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:backgroundTint="@android:color/transparent"
-            android:text="6" />
+            android:background="@drawable/bt_background"
+            android:text="6"
+            android:textSize="25sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btMinus"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:backgroundTint="@android:color/transparent"
-            android:text="-" />
+            android:background="@drawable/bt_background"
+            android:text="-"
+            android:textColor="#176246"
+            android:textSize="25sp" />
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -176,16 +196,18 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:backgroundTint="@android:color/transparent"
-            android:text="1" />
+            android:background="@drawable/bt_background"
+            android:text="1"
+            android:textSize="25sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btNumber2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:backgroundTint="@android:color/transparent"
-            android:text="2" />
+            android:background="@drawable/bt_background"
+            android:text="2"
+            android:textSize="25sp" />
         />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -193,16 +215,19 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:backgroundTint="@android:color/transparent"
-            android:text="3" />
+            android:background="@drawable/bt_background"
+            android:text="3"
+            android:textSize="25sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btPlus"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:backgroundTint="@android:color/transparent"
-            android:text="+" />
+            android:background="@drawable/bt_background"
+            android:text="+"
+            android:textColor="#176246"
+            android:textSize="25sp" />
         />
 
 
@@ -222,16 +247,18 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:backgroundTint="@android:color/transparent"
-            android:text="." />
+            android:background="@drawable/bt_background"
+            android:text="."
+            android:textSize="25sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btNumber0"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:backgroundTint="@android:color/transparent"
-            android:text="0" />
+            android:background="@drawable/bt_background"
+            android:text="0"
+            android:textSize="25sp" />
         />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -239,16 +266,18 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:backgroundTint="@android:color/transparent"
-            android:text="," />
+            android:background="@drawable/bt_background"
+            android:text=","
+            android:textSize="25sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btEqual"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:backgroundTint="@android:color/transparent"
-            android:text="=" />
+            android:background="@drawable/bt_background3"
+            android:text="="
+            android:textSize="25sp" />
         />
 
 

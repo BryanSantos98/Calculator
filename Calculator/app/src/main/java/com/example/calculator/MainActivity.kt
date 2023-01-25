@@ -101,15 +101,14 @@ class MainActivity : AppCompatActivity() {
 
         if (actualText.isNotEmpty()) {
             """\d""".toRegex().find(actualText.last().toString()).let { matchResult ->
-                if (matchResult?.value != null) {tvCalculator?.text = actualText.plus(char)}
+                if (matchResult?.value != null) {
+                    tvCalculator?.text = actualText.plus(char)
+                }
             }
         }
     }
 }
 
-
-//botoes
-//fundo
 //fazer o resultado desaparecer quando pressionar outro botão
 
 
