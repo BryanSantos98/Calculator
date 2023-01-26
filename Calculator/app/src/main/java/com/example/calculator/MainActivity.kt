@@ -76,19 +76,13 @@ class MainActivity : AppCompatActivity() {
                     tvCalculator?.text = longResult.toString()
                 else
                     tvCalculator?.text = result.toString()
-            } catch (e: Exception) {
-                Log.d("Exception", "Message : " + e.message)
-            }
+            } catch (e: Exception) { Log.d("Exception", "Message : " + e.message) }
         }
     }
 
-    private fun addNewChar(char: String) {
-        tvCalculator?.text = tvCalculator?.text.toString().plus(char)
-    }
+    private fun addNewChar(char: String) { tvCalculator?.text = tvCalculator?.text.toString().plus(char) }
 
-    private fun clearScreen() {
-        tvCalculator?.text = ""
-    }
+    private fun clearScreen() { tvCalculator?.text = "" }
 
     private fun backspace() {
         val actualText = tvCalculator?.text.toString()
@@ -101,15 +95,12 @@ class MainActivity : AppCompatActivity() {
 
         if (actualText.isNotEmpty()) {
             """\d""".toRegex().find(actualText.last().toString()).let { matchResult ->
-                if (matchResult?.value != null) {
-                    tvCalculator?.text = actualText.plus(char)
-                }
+                if (matchResult?.value != null) { tvCalculator?.text = actualText.plus(char) }
             }
         }
     }
 }
 
-//fazer o resultado desaparecer quando pressionar outro botão
 
 
 
